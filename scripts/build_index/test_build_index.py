@@ -1,13 +1,20 @@
-from list_videos import get_video_urls, get_video_details
+import os
+
+from build_index import get_video_urls, get_video_details
+
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
 def _class_list_html() -> str:
-    with open("_testdata/class_list.html") as f:
+    path = os.path.join(dir_path, "_testdata/class_list.html")
+    with open(path) as f:
         return f.read()
 
 
 def _class_html() -> str:
-    with open("_testdata/class.html") as f:
+    path = os.path.join(dir_path, "_testdata/class.html")
+    with open(path) as f:
         return f.read()
 
 
